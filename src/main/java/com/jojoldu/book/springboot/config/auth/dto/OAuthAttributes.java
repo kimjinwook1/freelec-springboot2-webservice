@@ -3,6 +3,7 @@ package com.jojoldu.book.springboot.config.auth.dto;
 import com.jojoldu.book.springboot.domain.user.Role;
 import com.jojoldu.book.springboot.domain.user.User;
 import java.util.Map;
+import java.util.Map.Entry;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -69,6 +70,7 @@ public class OAuthAttributes {
 		return OAuthAttributes.builder()
 			.name((String) attributes.get("name"))
 			.email((String) attributes.get("email"))
+			.picture((String) attributes.get("avatar_url"))
 			.attributes(attributes)
 			.nameAttributeKey(userNameAttributeName)
 			.build();
