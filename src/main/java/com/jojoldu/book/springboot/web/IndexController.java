@@ -4,7 +4,6 @@ import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
-import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class IndexController {
 
 	private final PostsService postsService;
-	private final HttpSession httpSession;
 
 	@GetMapping("/")
 	public String index(Model model, @LoginUser SessionUser user) {
