@@ -6,12 +6,14 @@ import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.web.dto.PostsResponseDto;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
+@Slf4j
 @RequiredArgsConstructor
 public class IndexController {
 
@@ -29,8 +31,10 @@ public class IndexController {
 
 	@GetMapping("/posts/save")
 	public String postsSave() {
+		log.info("postsSave 호출");
 		return "posts-save";
 	}
+
 
 	@GetMapping("/posts/update/{id}")
 	public String postsUpdate(@PathVariable Long id, Model model) {
